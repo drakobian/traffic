@@ -1,0 +1,17 @@
+{
+  "name": "traffic",
+  "version": "1.0.0",
+  "description": "A traffic intersection model",
+  "main": "dist/app.js",
+  "scripts": {
+    "prestart": "npx tsc",
+    "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "Drake Bennion",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
+  }
+}
