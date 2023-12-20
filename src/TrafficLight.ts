@@ -27,4 +27,8 @@ export class TrafficLight {
     public set leftLight(lightColor: Color) {
         this._leftLight = lightColor;
     }
+
+    public toString() {
+        return `Left: ${this._leftLight}, Forward: ${this._forwardLight}`;
+    }
 }

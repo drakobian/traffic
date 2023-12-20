@@ -1,7 +1,4 @@
-import { TrafficLight } from './TrafficLight';
-import { Color } from './Color.enum';
+import { TrafficController } from './TrafficController';
 
-const light = new TrafficLight();
-console.log(light.forwardLight);
-light.forwardLight = Color.Green;
-console.log(light.forwardLight);
+const controller = new TrafficController;
+console.log(controller.trafficLights);

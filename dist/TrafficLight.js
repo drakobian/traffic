@@ -21,5 +21,8 @@ class TrafficLight {
     set leftLight(lightColor) {
         this._leftLight = lightColor;
     }
+    toString() {
+        return `Left: ${this._leftLight}, Forward: ${this._forwardLight}`;
+    }
 }
 exports.TrafficLight = TrafficLight;
