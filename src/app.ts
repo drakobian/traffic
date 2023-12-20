@@ -1,4 +1,8 @@
 import { TrafficController } from './TrafficController';
 
 const controller = new TrafficController;
-console.log(controller.trafficLights);
+controller.run();
+
+setInterval(() => {
+    console.log(controller.trafficLights);
+}, 1000);
