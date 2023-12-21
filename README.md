@@ -1,7 +1,6 @@
 # traffic
 A traffic intersection model
 
-(for some reason this demo runs slow as a gif!)
 ![demo](demo.gif)
 
 ### Running the project
