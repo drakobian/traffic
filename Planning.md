@@ -176,5 +176,4 @@ Alrighty, I think by this point I've spent ~an hour in the planning phase, let's
 
 #### final thoughts
 I really hoped/thought I'd be able to make more progress on this! but i'm already a little over the 4 hour mark, and I'm happy enough with what it does for now.
-I was trying to tweak the design at the last minute to make it look more like actual traffic lights, but I had the strangest time with the arrows - for some reason, the left arrow emoji looks like ⬅, but the right arrow is so small! ➡️ !!
-and I don't know why 😂
+I was trying to tweak the design at the last minute to make it look more like actual traffic lights, but I had the strangest time with the arrows - for some reason, the right arrow emoji will only render teeny tiny and I don't know why 😂
