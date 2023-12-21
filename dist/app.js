@@ -16,17 +16,19 @@ setInterval(() => {
     tick = !tick;
 }, 500);
 const displayTrafficLights = (trafficLights, tick) => {
+    // really just to show time is passing/the program is running :p 
+    const indicator = tick ? '◐' : '◑';
     console.log(`
                     ${displayTrafficLight(trafficLights[0], tick)}
 
-         ${displayTrafficLight(trafficLights[2], tick)}                 ${displayTrafficLight(trafficLights[3], tick)}
+         ${displayTrafficLight(trafficLights[2], tick)}         ${indicator}        ${displayTrafficLight(trafficLights[3], tick)}
                 
                     ${displayTrafficLight(trafficLights[1], tick)}
          `);
 };
 const displayTrafficLight = (trafficLight, tick) => {
     const leftArrowFlash = tick ? chalk_1.default.black : chalk_1.default.hex('#FFA500');
-    return trafficLight.toString()
+    let withSymbols = trafficLight.toString()
         .replace(",", "")
         .replace(`Left: ${Color_enum_1.Color.Red}`, chalk_1.default.red('⬅'))
         .replace(`Left: ${Color_enum_1.Color.Orange}`, leftArrowFlash('⬅'))
@@ -35,4 +37,5 @@ const displayTrafficLight = (trafficLight, tick) => {
         .replace(`Forward: ${Color_enum_1.Color.Green}`, '🟢')
         .replace(`Forward: ${Color_enum_1.Color.Yellow}`, '🟡')
         .replace(`Forward: ${Color_enum_1.Color.Red}`, '🔴');
+    return withSymbols;
 };

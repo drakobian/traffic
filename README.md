@@ -3,11 +3,16 @@ A traffic intersection model
 
 ### Running the project
 Prerequisites: 
-- node (version  >= 21.5.0) installed
-- npm (version >= 10.2.4 installed)
+- node (version  >= 14.21.3) installed
+- npm (version >= 6.14.18 installed)
 
 With prerequisites satisfied, run
 ```
 npm i
 npm start
 ```
+
+#### my silly little notes
+See [my notes](Planning.md) that show how I tackled this
+I use a notetaker called Obsidian for markdown note taking and project planning.
+Fair warning: my notes are very stream-of-consciousness silliness

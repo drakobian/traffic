@@ -16,11 +16,13 @@ setInterval(() => {
 }, 500);
 
 const displayTrafficLights = (trafficLights: TrafficLight[], tick: boolean) => {
+    // really just to show time is passing/the program is running :p 
+    const indicator = tick ? '◐' : '◑'
     console.log(
     `
                     ${displayTrafficLight(trafficLights[0], tick)}
 
-         ${displayTrafficLight(trafficLights[2], tick)}                 ${displayTrafficLight(trafficLights[3], tick)}
+         ${displayTrafficLight(trafficLights[2], tick)}         ${indicator}        ${displayTrafficLight(trafficLights[3], tick)}
                 
                     ${displayTrafficLight(trafficLights[1], tick)}
          `);
@@ -29,7 +31,7 @@ const displayTrafficLights = (trafficLights: TrafficLight[], tick: boolean) => {
 const displayTrafficLight = (trafficLight: TrafficLight, tick: boolean): String => {
     const leftArrowFlash = tick ? chalk.black : chalk.hex('#FFA500');
 
-    return trafficLight.toString()
+    let withSymbols = trafficLight.toString()
         .replace(",", "")
         .replace(`Left: ${Color.Red}`, chalk.red('⬅'))
         .replace(`Left: ${Color.Orange}`,leftArrowFlash('⬅'))
@@ -38,4 +40,6 @@ const displayTrafficLight = (trafficLight: TrafficLight, tick: boolean): String 
         .replace(`Forward: ${Color.Green}`, '🟢')
         .replace(`Forward: ${Color.Yellow}`, '🟡')
         .replace(`Forward: ${Color.Red}`, '🔴');
+
+    return withSymbols;
 }

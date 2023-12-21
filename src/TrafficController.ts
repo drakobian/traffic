@@ -31,46 +31,26 @@ export class TrafficController {
         const eastLight = this._trafficLights[2];
         const westLight = this._trafficLights[3];
 
-        let [firstLight, secondLight] = this._lightPair === 0 ? [northLight, southLight] : [eastLight, westLight];
-        if (this._lightPair === 0) {
-            // set NS left lights to green,
-            // all other lights to red
-            northLight.leftLight = Color.Green;
-            southLight.leftLight = Color.Green;
-            northLight.forwardLight = Color.Red;
-            southLight.forwardLight = Color.Red;
-            eastLight.forwardLight = Color.Red;
-            westLight.forwardLight = Color.Red;
-            eastLight.leftLight = Color.Red;
-            westLight.leftLight = Color.Red;
-            //setNorthSouthLeftLights.bind(this, Color.Green);
-        } else {
-            // set EW left lights to green
-            // all other lights to red
-            northLight.leftLight = Color.Red;
-            southLight.leftLight = Color.Red;
-            northLight.forwardLight = Color.Red;
-            southLight.forwardLight = Color.Red;
-            eastLight.forwardLight = Color.Red;
-            westLight.forwardLight = Color.Red;
-            eastLight.leftLight = Color.Green;
-            westLight.leftLight = Color.Green;
-        }
+        this._trafficLights.forEach(trafficLight => {
+            trafficLight.leftLight = Color.Red;
+            trafficLight.forwardLight = Color.Red;
+        })
 
-        // todo: work these out as proportions!
-        // set left lights to yellow after 5 seconds (totalInterval time - 25000 in this case...)
+        let [firstLight, secondLight] = this._lightPair === 0 ? [northLight, southLight] : [eastLight, westLight];
+
+        firstLight.leftLight = Color.Green;
+        secondLight.leftLight = Color.Green;
+
         setTimeout(() => {
             firstLight.leftLight = Color.Yellow;
             secondLight.leftLight = Color.Yellow;
         }, (totalInterval - 25000) * timeScale);
 
-        // set lefts to red 2 seconds after that (7 seconds total, for now that's -23000)
         setTimeout(() => {
             firstLight.leftLight = Color.Red;
             secondLight.leftLight = Color.Red;
         }, (totalInterval - 23000) * timeScale);
 
-        // set lights to green and lefts to orange after 9 total seconds? (21000)
         setTimeout(() => {
             firstLight.forwardLight = Color.Green;
             firstLight.leftLight = Color.Orange;
@@ -101,3 +81,4 @@ export class TrafficController {
         light.leftLight = color;
     }
 }
+
