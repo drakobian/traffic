@@ -148,11 +148,11 @@ TrafficLight class
 #### UI
 Thinking for this, 4 circles next to four arrows arranged like an intersection:
 
-					light | left
-		left                light
-		-                   -
-		light               left
-					left | light
+		     light | left
+		left              light
+		-                 -
+		light             left
+		     left | light
 
 Just print to console - find that pretty color console printer (Chalk.js?)
 
@@ -173,3 +173,8 @@ Alrighty, I think by this point I've spent ~an hour in the planning phase, let's
 - [x] try out just a console implementation
 	- [x] print colors of each signal, let it run for a few minutes and make sure the flow is right/sane
 - [x] if I get here, plan out a console UI for this, likely using a colorful console printer
+
+#### final thoughts
+I really hoped/thought I'd be able to make more progress on this! but i'm already a little over the 4 hour mark, and I'm happy enough with what it does for now.
+I was trying to tweak the design at the last minute to make it look more like actual traffic lights, but I had the strangest time with the arrows - for some reason, the left arrow emoji looks like ⬅, but the right arrow is so small! ➡️ !!
+and I don't know why 😂
