@@ -1,3 +1,4 @@
+import { Color } from './Color.enum';
 import { TrafficController } from './TrafficController';
 import { TrafficLight } from './TrafficLight';
 import chalk from 'chalk';
@@ -26,10 +27,11 @@ const displayTrafficLights = (trafficLights: TrafficLight[]) => {
 const displayTrafficLight = (trafficLight: TrafficLight): String => {
     return trafficLight.toString()
         .replace(",", "")
-        .replace("Left: Red", chalk.red('⬅'))
-        .replace("Left: Yellow", chalk.yellow('⬅'))
-        .replace("Left: Green", chalk.green('⬅'))
-        .replace("Forward: Green", '🟢')
-        .replace("Forward: Yellow", '🟡')
-        .replace("Forward: Red", '🔴');
+        .replace(`Left: ${Color.Red}`, chalk.red('⬅'))
+        .replace(`Left: ${Color.Orange}`, chalk.hex('#FFA500')('⬅'))
+        .replace(`Left: ${Color.Yellow}`, chalk.yellow('⬅'))
+        .replace(`Left: ${Color.Green}`, chalk.green('⬅'))
+        .replace(`Forward: ${Color.Green}`, '🟢')
+        .replace(`Forward: ${Color.Yellow}`, '🟡')
+        .replace(`Forward: ${Color.Red}`, '🔴');
 }
